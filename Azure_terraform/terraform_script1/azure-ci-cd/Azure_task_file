@@ -1,0 +1,4 @@
+#Creating a new bucket, and the key will be fetched and placed dynamically while running the script
+$key=(Get-AzureRmStorageAccountKey -ResourceGroupName $(terraformstoragerg) -AccountName $(terraformstorageaccount)).Value[0]
+
+Write-host "##vso[task.setvariable variable=storagekey]$key"
